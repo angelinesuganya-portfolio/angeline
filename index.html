@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Angeline Suganya – Senior Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f6; --surface:#ffffff; --ink:#14213d; --muted:#51607d; --line:#d3dae8;
+  --accent:#2d5bff; --accent-ink:#ffffff; --mark:#ffb703; --chrome:#dde3f0;
+  --head:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;
+  --body:'Instrument Sans','Segoe UI',Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1830; --surface:#17223f; --ink:#eaf0ff; --muted:#a3b2d4; --line:#2a3963;
+    --accent:#7d9bff; --accent-ink:#0f1830; --mark:#ffc933; --chrome:#22305a;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:28px}
+section{padding:72px 0}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-family:var(--head);font-size:1.1rem}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;font-weight:500;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,7vw,4.8rem);font-weight:800}
+.hero h1 span{display:block;color:var(--accent)}
+.hero p{max-width:52ch;color:var(--muted);font-size:1.15rem;margin:22px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .15s}
+
+/* signature: live browser-window code card */
+.win{background:var(--surface);border:2px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--mark);overflow:hidden}
+.bar{display:flex;align-items:center;gap:6px;padding:10px 12px;background:var(--chrome);border-bottom:2px solid var(--ink)}
+.bar i{width:11px;height:11px;border-radius:50%;background:var(--ink);opacity:.35}
+.bar span{margin-left:10px;flex:1;background:var(--surface);border-radius:20px;padding:2px 12px;font-size:.78rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.code{padding:18px 20px;font:500 .9rem/1.8 ui-monospace,Consolas,monospace;min-height:210px}
+.code .k{color:var(--accent)}.code .s{color:var(--muted)}
+.caret{display:inline-block;width:8px;height:1em;background:var(--ink);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* stats */
+.stats{display:flex;flex-wrap:wrap;gap:0;border:2px solid var(--ink);border-radius:12px;background:var(--surface);overflow:hidden}
+.stats div{flex:1 1 180px;padding:20px 24px;border-right:1px solid var(--line)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font:800 2rem var(--head)}
+.stats span{color:var(--muted);font-size:.95rem}
+
+/* work */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:28px}
+.card{display:flex;flex-direction:column;background:var(--surface);border:2px solid var(--ink);border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--mark)}
+.shot{height:150px;border-bottom:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font:800 1.9rem var(--head);color:#fff;text-align:center;padding:12px}
+.c1{background:#2d5bff}.c2{background:#0f766e}.c3{background:#b4234d}.c4{background:#6d3fc8}.c5{background:#c2570c}
+.card .in{padding:18px 20px 22px}
+.card h3{font-size:1.3rem;margin-bottom:6px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:.98rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags li{list-style:none;font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:20px;background:var(--chrome)}
+.tags{margin:0;padding:0}
+.visit{display:block;margin-top:14px;font-weight:600;color:var(--accent)}
+
+/* experience */
+.job{display:grid;grid-template-columns:200px 1fr;gap:12px 32px;padding:28px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:2px solid var(--ink)}
+.job .when{color:var(--muted);font-weight:500}
+.job h3{font-size:1.3rem}
+.job .co{color:var(--accent);font-weight:600;margin:2px 0 12px}
+.job ul{margin:0;padding-left:20px}
+.job li{margin-bottom:8px;max-width:75ch}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.skills div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.skills h3{font-size:1.05rem;margin-bottom:10px}
+.skills p{margin:0;color:var(--muted);font-size:.97rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.two ul{margin:0;padding:0;list-style:none}
+.two li{padding:10px 0;border-bottom:1px solid var(--line)}
+.two li small{display:block;color:var(--muted)}
+h3.sub{font-size:1.3rem;margin-bottom:12px}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg)}
+.contact h2{margin-bottom:12px}
+.contact p{color:inherit;opacity:.8;max-width:50ch}
+.contact .btn{border-color:var(--bg);color:var(--bg)}
+.contact .btn.pri{background:var(--mark);border-color:var(--mark);color:#14213d}
+footer{padding:20px 0;text-align:center;color:var(--muted);font-size:.9rem}
+
+@media (max-width:760px){
+  .hero .wrap,.two,.job{grid-template-columns:1fr}
+  nav ul{gap:14px;font-size:.92rem}
+  nav b{display:none}
+  section{padding:52px 0}
+}
+@media (prefers-reduced-motion:reduce){.caret{animation:none}.btn,.card{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Angeline Suganya</b>
+<ul><li><a href="#work">Work</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <h1>Angeline Suganya <span>builds fast, scalable web apps.</span></h1>
+    <p>Senior Software Engineer with 8 years of full-stack experience in PHP, React.js, Next.js and AWS. I turn designs into reliable products that load quickly and are easy to use.</p>
+    <div class="btns"><a class="btn pri" href="#work">See my work</a><a class="btn" href="#contact">Get in touch</a></div>
+  </div>
+  <div class="win" aria-hidden="true">
+    <div class="bar"><i></i><i></i><i></i><span>localhost/angeline.php</span></div>
+    <div class="code" id="code"></div>
+  </div>
+</div></header>
+
+<div class="wrap"><div class="stats">
+  <div><b>8 yrs</b><span>Full-stack development</span></div>
+  <div><b>30%</b><span>Faster database queries</span></div>
+  <div><b>25%</b><span>Better app responsiveness</span></div>
+  <div><b>15%</b><span>Higher customer satisfaction</span></div>
+</div></div>
+
+<section id="work"><div class="wrap">
+  <h2>Sites I've built</h2>
+  <div class="grid">
+    <a class="card" href="https://www.dbgyff.com/" target="_blank" rel="noopener"><div class="shot c1">dbgyff.com</div><div class="in"><h3>DBGYFF</h3><p>Responsive company website built from the designers' mockups.</p><ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul><span class="visit">Visit site</span></div></a>
+    <a class="card" href="https://solmetex.com/" target="_blank" rel="noopener"><div class="shot c2">Solmetex</div><div class="in"><h3>Solmetex</h3><p>Business website with custom theme work and third-party integrations.</p><ul class="tags"><li>WordPress</li><li>PHP</li><li>API integration</li></ul><span class="visit">Visit site</span></div></a>
+    <a class="card" href="https://www.korcomptenz.com/" target="_blank" rel="noopener"><div class="shot c3">Korcomptenz</div><div class="in"><h3>Korcomptenz</h3><p>Corporate website for a global IT consulting firm, tuned for speed and content management.</p><ul class="tags"><li>WordPress</li><li>PHP</li><li>Performance</li></ul><span class="visit">Visit site</span></div></a>
+    <a class="card" href="https://www.dreamsports.group/" target="_blank" rel="noopener"><div class="shot c4">Dream Sports Group</div><div class="in"><h3>Dream Sports Group</h3><p>Brand and company site with a clean, responsive layout.</p><ul class="tags"><li>React.js</li><li>Tailwind CSS</li><li>REST APIs</li></ul><span class="visit">Visit site</span></div></a>
+    <a class="card" href="https://www.talentharvest.com/" target="_blank" rel="noopener"><div class="shot c5">Talent Harvest</div><div class="in"><h3>Talent Harvest</h3><p>Talent and recruitment website with clear service pages and easy enquiries.</p><ul class="tags"><li>WordPress</li><li>HTML5</li><li>CSS3</li></ul><span class="visit">Visit site</span></div></a>
+  </div>
+</div></section>
+
+<section id="experience" style="padding-top:0"><div class="wrap">
+  <h2>Experience</h2>
+  <div class="job">
+    <div class="when">Mar 2023 – Oct 2026<br>Chennai, Tamil Nadu</div>
+    <div><h3>Senior Software Engineer</h3><div class="co">Korcomptenz</div>
+    <ul>
+      <li>Led design, development and deployment of scalable web applications, improving responsiveness by 25%.</li>
+      <li>Built RESTful APIs and integrated multiple third-party services.</li>
+      <li>Optimized SQL and MySQL queries, cutting query times by 30% and reducing server load.</li>
+      <li>Worked with UI/UX teams to turn mockups into usable interfaces, contributing to a 15% rise in customer satisfaction scores.</li>
+      <li>Mentored junior developers through code reviews and knowledge-sharing sessions.</li>
+    </ul></div>
+  </div>
+  <div class="job">
+    <div class="when">Jun 2015 – Dec 2019<br>Dindigul, Tamil Nadu</div>
+    <div><h3>Full Stack Developer</h3><div class="co">Meenu Technologies</div>
+    <ul>
+      <li>Built and maintained dynamic web applications in PHP, MySQL, HTML, CSS and JavaScript, with cross-browser support.</li>
+      <li>Delivered web projects on WordPress, Joomla and OpenCart for a range of clients.</li>
+      <li>Integrated secure third-party APIs and payment gateways for e-commerce sites.</li>
+      <li>Deployed and managed applications on AWS servers for high availability.</li>
+      <li>Resolved critical bugs, improving system reliability and performance by 20%.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="skills" style="padding-top:0"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><h3>Backend</h3><p>PHP (Laravel, CodeIgniter), RESTful APIs, API integration, MySQL, SQL, JSON, XML</p></div>
+    <div><h3>Frontend</h3><p>JavaScript (ES6+), React.js, Next.js, Angular, HTML5, CSS3, Tailwind CSS, Bootstrap, AJAX, responsive design</p></div>
+    <div><h3>CMS</h3><p>WordPress (theme customization, plugin integration), Joomla, OpenCart</p></div>
+    <div><h3>Cloud and tools</h3><p>AWS (EC2, S3), Azure, DevOps, Git, GitHub, performance optimization, Agile (Scrum)</p></div>
+  </div>
+  <div class="two" style="margin-top:48px">
+    <div><h3 class="sub">Education</h3><ul>
+      <li>M.Sc Information Technology, 2014<small>Gandhigram Rural Institute, CGPA 7.3</small></li>
+      <li>BCA, 2012<small>St. Antony's College of Arts &amp; Sciences for Women, 87.0%</small></li>
+    </ul></div>
+    <div><h3 class="sub">Certifications</h3><ul>
+      <li>WordPress Developer SME</li>
+      <li>ReactJS Foundations<small>Also: Angular Foundations</small></li>
+      <li>Azure Fundamentals for Beginners<small>Also: DevOps for Beginners</small></li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let's work together</h2>
+  <p>Open to full-stack and WordPress projects. Based in Theni, Tamil Nadu. I speak English and Tamil.</p>
+  <div class="btns" style="margin-top:22px">
+    <a class="btn pri" href="mailto:angelinesuganya0@gmail.com">angelinesuganya0@gmail.com</a>
+    <a class="btn" href="tel:+918056959148">08056959148</a>
+  </div>
+</div></section>
+<footer>© 2026 Angeline Suganya</footer>
+
+<script>
+(function(){
+  var el=document.getElementById('code');
+  var lines=[
+    '<span class="k">$engineer</span> = [',
+    '&nbsp;&nbsp;<span class="s">\'name\'</span>   =&gt; \'Angeline Suganya\',',
+    '&nbsp;&nbsp;<span class="s">\'stack\'</span>  =&gt; [\'PHP\', \'React\', \'Next.js\', \'AWS\'],',
+    '&nbsp;&nbsp;<span class="s">\'years\'</span>  =&gt; 8,',
+    '&nbsp;&nbsp;<span class="s">\'status\'</span> =&gt; \'open to work\'',
+    '];'
+  ];
+  var html=lines.join('<br>')+'<br><span class="caret"></span>';
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){el.innerHTML=html;return;}
+  var i=0;
+  function step(){
+    el.innerHTML=lines.slice(0,i).join('<br>')+(i?'<br>':'')+'<span class="caret"></span>';
+    if(i<lines.length){i++;setTimeout(step,420);}
+  }
+  step();
+})();
+</script>
+</body>
+</html>
